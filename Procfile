@@ -1,1 +1,1 @@
-web: gunicorn atucasa.wsgi
+web: gunicorn qdict.wsgi
