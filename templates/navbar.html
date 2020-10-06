@@ -1,0 +1,11 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light d-flex">
+    <a class="navbar-brand order-0" href="{% url 'index' %}">Navbar</a>
+    <form class="form-inline ml-auto mr-0 my-2 d-flex flex-fill order-2">
+        <input class="form-control mr-sm-2 ml-auto flex-fill" type="search" placeholder="Ingresar palabra qom" aria-label="Buscar" name="{{ request.GET.word }}">
+        <button class="btn btn-outline-success my-2 my-sm-0 ml-auto" type="submit">Buscar</button>
+      </form>
+    <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="w-100 d-lg-none order-1"></div>
+</nav>
