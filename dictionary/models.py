@@ -9,4 +9,7 @@ class Word(models.Model):
     see = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
-        return self.qom or ""
+        return self.qom
+
+    class Meta:
+        ordering = ['pk']
