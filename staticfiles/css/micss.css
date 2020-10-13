@@ -1,11 +1,18 @@
+.container {
+    position: relative;
+}
+
 .boton {
     border: black .3px solid;
-    position: fixed;
+    position: absolute;
     padding: 10px 23px;
     background-color: rgb(66, 161, 190);
     border-radius: 5px;
-    bottom: 20px;
-    right: 20px;
+    display: block;
+    float: right;
+    border-color: rgb(66, 161, 190);
+    /* top: 60px; */
+    /* right: 20px; */
     text-transform: capitalize;
 }
 .boton:hover {
