@@ -1,28 +1,24 @@
-function insertar() {
-    let input = document.getElementById("searchin");
+function insertar(input, str) {
     let startPos = input.selectionStart;
     let endPos = input.selectionEnd;
-    let contenido = input.value;
-    let pparte = contenido.slice(0, startPos);
-    let sparte = contenido.slice(endPos);
-    const ychar = "ỹ";
-    let fullStr = pparte + ychar + sparte;
+    let pparte = input.value.slice(0, startPos);
+    let sparte = input.value.slice(endPos);
     input.focus();
-    input.value = fullStr;
+    input.value = pparte + str + sparte;
     input.selectionStart = startPos + 1;
     input.selectionEnd = startPos + 1;
 }
 
-
-function teclado(event) {
+function atajo(event) {
     widget = event.target;
+    // alt + y
     if (event.altKey && event.keyCode == 89) {
-        insertar();
+        insertar(widget, "ỹ");
     }
 }
 
-var inputBox = inp = document.getElementById("searchin");
+var inputBox = document.getElementById("search-box");
 btn = document.getElementById("btn-y");
 
-btn.addEventListener("click", insertar, false);
-inputBox.addEventListener("keydown", teclado, false);
+btn.addEventListener("click", function(){insertar(inputBox, "ỹ")}, false);
+inputBox.addEventListener("keydown", atajo, false);
