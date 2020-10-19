@@ -12,6 +12,30 @@
 
 {% block content %}
 <h1>Diccionario Qom - Español</h1>
+<hr class="row">
+{% if buscando %}
+    {% if word %}
+    <strong>Qom:</strong>
+    <span>{{ word.qom|default:""|capfirst }}</span>
+    <br>
+    <strong>Definición:</strong>
+    <span>{{ word.dfs|default:""|capfirst }}</span>
+    <br>
+    <strong>Sinónimo:</strong>
+    <span>{{ word.syn|default:""|capfirst }}</span>
+    <br>
+    <strong>Variante:</strong>
+    <span>{{ word.var|default:""|capfirst }}</span>
+    <br>
+    <strong>Ver también:</strong>
+    <span>{{ word.see|default:""|capfirst }}</span>
+    {% else %}
+    <p>No se pudo encontrar la palabra buscada.</p>
+    {% endif %}
+{% else %}
+<p>Ingrese una palabra qom a buscar, puede usar el botón de abajo para escribir la letra <i>ỹ</i>.</p>
+<p>Si está en una computadora tambíén puede presionar <code>Alt + y</code> para ingresar esa letra.</p>
+{% endif %}
 
 <div class="container fixed-bottom">
     <div class="row justify-content-end">
